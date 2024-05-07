@@ -2,15 +2,15 @@
 
 
 .card-inner {
-     width: 15rem;
-     height: 20rem;
+     width: 10rem;
+     height: 10rem;
      position: relative;
      transition: transform 0.6s;
      transform-style: preserve-3d;
    }
    
    .card-front {
-     width: 15rem;
+     width: 10rem;
      position: absolute;
      backface-visibility: hidden;
      transform: rotateY(0deg);
@@ -18,8 +18,8 @@
    .card-back {
      transform: rotateY(180deg);
      background: #a7588b; 
-     width: 15rem;
-     height: 15rem;
+     width: 10rem;
+     height: 10rem;
      backface-visibility: hidden;
    }
    .card-front img{

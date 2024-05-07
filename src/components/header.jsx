@@ -10,9 +10,10 @@ function Header() {
 
  <header> 
     <nav>
-      <a href="#"> Regles du jeu </a>
-      <a href="#"> Accueil </a>
+        <a href="#"> Accueil </a>
+        <a href="#"> Regles du jeu </a>
     </nav>
+
  </header>
 
 

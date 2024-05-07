@@ -2,7 +2,15 @@
 
 
 
-nav {background-color: rgb(242, 128, 194);
+header {background-color: rgb(242, 128, 194);
+     height: 5rem;
+     display: flex;
+     justify-content: space-around;
+     gap: 1rem;
      }
 
+nav { 
+     display: flex;
+     gap : 2rem;
+}
 nav a {color: white;}

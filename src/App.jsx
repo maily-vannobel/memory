@@ -1,19 +1,17 @@
 import { useState } from 'react'
 import './App.css'
 import React from 'react';
-import Mybutton from './components/button';
 import GameBoard from './components/gameboard';
+import Title from './components/title';
 
 
 function App() {
 
   return (
     <>
+        <Title text="Memory Game"/>
     
-      <h1>Jeu Memory</h1>
       <GameBoard />
-     
-
     </>
   );
 }

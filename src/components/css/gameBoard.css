@@ -1,0 +1,27 @@
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+}
+
+
+
+h1 {
+  color: rgb(226, 118, 150);
+  
+}
+
+.menu-player {
+  display: flex;
+  padding: 1rem;
+  max-width: fit-content;
+  gap:2rem;
+  background-color: rgb(217, 145, 170);
+  margin-bottom: 2rem;
+  
+}
+
+.timer {
+  background-color: white;
+}
