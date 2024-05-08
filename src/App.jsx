@@ -10,8 +10,8 @@ function App() {
   return (
     <>
         <Title text="Memory Game"/>
-    
-      <GameBoard />
+        <GameBoard />
+        
     </>
   );
 }

@@ -11,7 +11,8 @@ h1 {
   color: rgb(226, 118, 150);
   
 }
-
+body {
+  background-image: url('.assets/images/back.png');}
 .menu-player {
   display: flex;
   padding: 1rem;
