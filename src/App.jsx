@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-        <Title text="Memory Game"/>
+        <Title text="Memory Game" subtext="Testez votre mémoire"/>
         <GameBoard />
         
     </>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MyButton from './button';
 import GameCard from './card'
+import ScoreBoard from './scoreboard'
+
 import './css/gameBoard.css'
 
 
@@ -27,6 +29,10 @@ function GameBoard() {
   const [timerIntervalId, setTimerIntervalId] = useState(null);
   const [gameStarted, setGameStarted] = useState(false);  //savoir si jeu commencé
   const [hasWon, setHasWon] = useState(false);
+  const [scores, setScores] = useState(() => {
+    const storedScores = localStorage.getItem('bestScores');
+    return storedScores ? JSON.parse(storedScores) : [];
+  });
 
  //fonction pour mélanger cartes
   function shuffle(array) {
@@ -171,21 +177,33 @@ function GameBoard() {
     const allMatched = cards.every(card => card.isMatched);
     if (allMatched) {
       setHasWon(true);
+      addNewScore(timer);
     }
+  }
+  function addNewScore(newScore) {
+    const updatedScores = [...scores, newScore].sort((a, b) => a - b).slice(0, 3);
+    setScores(updatedScores);
+    localStorage.setItem('bestScores', JSON.stringify(updatedScores));
   }
   
   return ( 
     <>
-      <div className="menu-player">
-        <MyButton text="Lancer le jeu" onClick={startGame} />
-        <button className='timer'> Temps : {timer} secondes </button>
-      </div>
-      {hasWon && <div className="victory-message">Félicitations! Vous avez gagné!</div>} {/* Message de victoire */}
-      <div className="game-board">
-        {cards.map((card, index) => (
-          <GameCard key={index} card={card} onClick={handleCardClick} />
-        ))}
-      </div>
+    <div className="header-container">
+            <div className="menu-player">
+              <MyButton text="Lancer le jeu" onClick={startGame} />
+              <button className='timer'> Temps : {timer} secondes </button>
+            </div>
+            <div className="scoreboard">
+               <ScoreBoard scores={scores} />
+            </div>
+    </div>
+
+          {hasWon && <div className="victory-message">Félicitations! Vous avez gagné!</div>} {/* Message de victoire */}
+          <div className="game-board">
+            {cards.map((card, index) => (
+              <GameCard key={index} card={card} onClick={handleCardClick} />
+            ))}
+          </div>
     </>
   );  
 }

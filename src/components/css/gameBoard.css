@@ -18,11 +18,38 @@ body {
   padding: 1rem;
   max-width: fit-content;
   gap:2rem;
-  background-color: rgb(217, 145, 170);
   margin-bottom: 2rem;
   
 }
 
-.timer {
-  background-color: white;
+
+
+.header-container {
+  display: flex;    
+         
+  justify-content: space-between; 
+  align-items: center;       /* Aligne verticalement les enfants au centre du conteneur */
+  margin-bottom: 20px;   
+
+  border: 4px solid transparent; /* Crée une bordure vide initialement */
+  border-radius: 8px;           
+  background: linear-gradient(90deg, #A7D6DC 0%, #99CFD6 80%);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 5px;                  /* Espacement pour la bordure */
+  display: inline-block;         /* Ajuste la taille du conteneur à celle de la carte */
+
+
+
+}
+
+.menu-player, .scoreboard {
+  flex: 1;                    /* Assigne une largeur égale aux deux colonnes */
+  display: flex;             
+  justify-content: center;   
+}
+
+/* Conteneur de la bordure dégradée */
+.menu-container {
 }
